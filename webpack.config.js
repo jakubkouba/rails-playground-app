@@ -1,17 +1,28 @@
 const path    = require("path")
 const webpack = require("webpack")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   mode: "production",
   devtool: "source-map",
   entry: {
-    application: "./app/javascript/application.js"
+    application: "./app/javascript/packs/application.js"
   },
   output: {
-    filename: "[name].js",
+    filename: "js/[name].js",
     sourceMapFilename: "[file].map",
-    chunkFormat: "module",
-    path: path.resolve(__dirname, "app/assets/builds"),
+    path: path.resolve(__dirname, "public/packs"),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules\/(?!(?:@hotwired\/turbo)\/).*/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
   },
   plugins: [
     new webpack.optimize.LimitChunkCountPlugin({
