@@ -20,7 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  schema_search_path: <%= ENV['DB_SCHEMA'] %>
+  schema_search_path: <%= ENV['RAILS_PLAYGROUND_DB_SCHEMA'] %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: 127.0.0.1
@@ -87,5 +87,5 @@ test:
 production:
   <<: *default
   database: rails_playground_production
-  username: rails_playground
-  password: <%= ENV["RAILS_PLAYGROUND_DATABASE_PASSWORD"] %>
+  username: <%= ENV['RAILS_PLAYGROUND_DATABASE_USER'] %>
+  password: <%= ENV['RAILS_PLAYGROUND_DATABASE_PASSWORD'] %>
