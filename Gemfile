@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.3.3"
 
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 gem "bigdecimal", "~> 3.1"
 gem "mutex_m", "~> 0.2.0"
 
@@ -55,6 +57,11 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.17', require: false
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano3-puma', '~> 5.2'
+  gem 'capistrano-rvm', '~> 0.1'
+
   gem "dotenv", "~> 3.1"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

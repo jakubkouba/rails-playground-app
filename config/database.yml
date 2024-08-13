@@ -86,6 +86,8 @@ test:
 #
 production:
   <<: *default
-  database: rails_playground_production
-  username: <%= ENV['RAILS_PLAYGROUND_DATABASE_USER'] %>
-  password: <%= ENV['RAILS_PLAYGROUND_DATABASE_PASSWORD'] %>
+  database: forty_unbroken_development
+  host: <%= ENV['RAILS_PLAYGROUND_DATABASE_HOST'] %>
+  port: <%= ENV['RAILS_PLAYGROUND_DATABASE_PORT'] %>
+  username: <%= ENV['RAILS_PLAYGROUND_DATABASE_USERNAME'] %>
+  password: <%= ENV["RAILS_PLAYGROUND_DATABASE_PASSWORD"] %>
