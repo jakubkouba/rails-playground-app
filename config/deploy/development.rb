@@ -63,7 +63,7 @@
 set :deploy_to, '/home/git/apps/rails-playground/developemnt'
 set :rails_env, 'production'
 set :migration_role, :app
-set :conditionally_migrate, true
+set :conditionally_migrate, false
 set :bundle_flags, '' # reset bundler flags for staging to see the progress
 set :puma_nginx, :app
 set :puma_role, :app
