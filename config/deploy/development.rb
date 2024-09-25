@@ -60,7 +60,7 @@
 #     # password: "please use keys"
 #   }
 
-set :deploy_to, '/home/git/apps/rails-playground/developemnt'
+set :deploy_to, '/home/git/apps/rails-playground/development'
 set :rails_env, 'production'
 set :migration_role, :app
 set :conditionally_migrate, false
