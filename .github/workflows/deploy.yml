@@ -23,5 +23,5 @@ jobs:
           echo "${{ secrets.DO_GIT_PRIVATE_KEY }}" > $PRIVATE_KEY_PATH
           chmod 600 $PRIVATE_KEY_PATH
       - name: Deploy via Capistrano
-        run: bundle exec cap staging deploy
+        run: bundle exec cap development deploy
 
